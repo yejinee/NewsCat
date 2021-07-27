@@ -28,7 +28,7 @@ def find_sim_news(df,sorted_ind, news_id, top_n=5):
     return ans
 
 
-data=pd.read_csv('C:/Users/kimjh/d/sample1.csv')
+data=pd.read_csv('C:/Users/kimjh/d/sample.csv')
 news=data[['headline', 'url', 'category', 'name', 'hot_word']]
 
 
@@ -77,13 +77,14 @@ for i in range(len(userinfo)):
     # userlog에 해당하는 애가 있는 경우
     else:
         temp=[]
-        temp.extend(random.sample(news[news['category']==category[cate1]].index.tolist(),1))
-        temp.extend(random.sample(news[news['category']==category[cate2]].index.tolist(),1))
         #  추천 알고리즘 수행해서 3개 data 추출하기
         # userlog의 news index모두 추출
         nidx=user_log['news_id']
         similar_news_list=find_sim_news(news,genre_sim_sorted_ind, nidx ,3)
         temp.extend(similar_news_list)
+        ### Ramdom 추출
+        temp.extend(random.sample(news[news['category']==category[cate1]].index.tolist(),2))
+        temp.extend(random.sample(news[news['category']==category[cate2]].index.tolist(),2))
         reco_idx=random.sample(temp,5)
     
     # user_id, reconewslist db에 전송하기
