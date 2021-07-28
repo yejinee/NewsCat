@@ -28,7 +28,7 @@ def find_sim_news(df,sorted_ind, news_id, top_n=5):
     return ans
 
 
-data=pd.read_csv('C:/Users/kimjh/d/sample.csv')
+data=pd.read_csv('C:/Users/kimjh/d/final.csv')
 news=data[['headline', 'url', 'category', 'name', 'hot_word']]
 
 
@@ -90,8 +90,8 @@ for i in range(len(userinfo)):
     # user_id, reconewslist db에 전송하기
     link1,link2, link3, link4, link5 =news['url'][reco_idx[0]],news['url'][reco_idx[1]], news['url'][reco_idx[2]], news['url'][reco_idx[3]], news['url'][reco_idx[4]]
     
-    update_sql="UPDATE Daily_Reco set News_link1=%s, News_link2=%s, News_link3=%s, News_link4=%s, News_link5=%s WHERE User_id=%s"
-    cur.execute(update_sql, (link1,link2, link3,link4, link5, userid)) 
+    update_sql="UPDATE Daily_Reco set News_link1=%s, News_link2=%s, News_link3=%s, News_link4=%s, News_link5=%s, News_id1=%s, News_id2=%s, News_id3=%s, News_id4=%s,News_id5=%s WHERE User_id=%s"
+    cur.execute(update_sql, (link1,link2, link3,link4, link5,reco_idx[0], reco_idx[1], reco_idx[2], reco_idx[3], reco_idx[4] ,userid)) 
     con.commit()
     
     print(userid,"의 유저가 선호하는 뉴스는 ", news['headline'][reco_idx[0]])
