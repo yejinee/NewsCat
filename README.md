@@ -16,7 +16,7 @@
 ## ✔ 서비스 설명
 ### (1) 추천 알고리즘을 활용한 뉴스 콘텐츠 큐레이션 서비스  
 
-![serviceinfo](./img/ServiceIntro.png)
+![serviceinfo](./img/ServiceIntro.PNG)
 
 
 ### (2) 챗봇 형식의 구독형 뉴스 콘텐츠 큐레이션 서비스
@@ -30,5 +30,5 @@
 
 ## ✔ System Architecture
 
-![serviceArchi](./img/SystemArchitecture.png)
+![serviceArchi](./img/SystemArchitecture.PNG)
 
