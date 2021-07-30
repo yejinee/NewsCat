@@ -44,7 +44,8 @@ genre_sim_sorted_ind=genre_sim.argsort()[:,::-1]
 
 
 ######  DB 접속 #############################################
-con=pymysql.connect(host='final-chatbot.c7dwoilcj9uq.ap-northeast-2.rds.amazonaws.com',user='yejin',password='1313', db='CHAT_BOT_DB', charset='utf8')
+#### Plz put your server information ######################
+con=pymysql.connect(host='server address',user='username',password='your password', db='schema', charset='utf8')
 cur=con.cursor()
 
 # User Table에서 User정보 싹다 뽑아오기 

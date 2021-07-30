@@ -91,10 +91,10 @@ def funding(update: Update, context: CallbackContext) -> None:
 def unknown(update, context):
     context.bot.send_message(chat_id=update.effective_chat.id, text="뭔 🐶소리냥")
 
-
+### Plz Put your chabot information #######
 def main() -> None:
 
-    updater = Updater("1909634364:AAEqg6352ES9y1XmsaaoopFdqItNjpHKTSk")
+    updater = Updater("chatbot")
 
 
     dispatcher = updater.dispatcher

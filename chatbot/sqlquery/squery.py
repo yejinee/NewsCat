@@ -12,7 +12,7 @@ class Userquery():
 
     ###### 예진 추가 ) 이때 초기화 같이 진행
     def querrytords(self):
-        conn = pymysql.connect(host='final-chatbot.c7dwoilcj9uq.ap-northeast-2.rds.amazonaws.com', user='yschoi', password='mm001138', db='CHAT_BOT_DB', charset='utf8') 
+        conn = pymysql.connect(host='server addredd', user='username', password='pw', db='shema', charset='utf8') 
         cursor = conn.cursor() 
         sleep(1)
         cat_list = []
@@ -47,9 +47,7 @@ class Userquery():
 
 
     def send_reco(self):
-        conn = pymysql.connect(host='final-chatbot.c7dwoilcj9uq.ap-northeast-2.rds.amazonaws.com',
-                             user='yschoi', password='mm001138',
-                              db='CHAT_BOT_DB', charset='utf8') 
+        conn = pymysql.connect(host='server addredd', user='username', password='pw', db='shema', charset='utf8') 
         cursor = conn.cursor() 
         sleep(1)
         query_test = 'select * from Daily_Reco where User_id = {};'.format(self.userid)
@@ -58,9 +56,7 @@ class Userquery():
         return reco_list
     
     def send_like(self):
-        conn = pymysql.connect(host='final-chatbot.c7dwoilcj9uq.ap-northeast-2.rds.amazonaws.com',
-                             user='yschoi', password='mm001138',
-                              db='CHAT_BOT_DB', charset='utf8')
+        conn = pymysql.connect(host='server addredd', user='username', password='pw', db='shema', charset='utf8')
         cursor = conn.cursor()
         sleep(1)
         b = [i for i in self.pref.split()][1:]
@@ -75,11 +71,6 @@ class Userquery():
             print(sql)
             cursor.execute(sql)
             conn.commit()
-
-
-        #li = [0,0,0,0,0]
-        #for i in b:
-        #    li[int(i)] = 1
 
         
 
