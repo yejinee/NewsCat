@@ -30,5 +30,5 @@
 
 ## ✔ System Architecture
 
-![serviceArchi](./img/SystemArchitecture.PNG)
+![serviceArchi](./img/SystemArchitecture1.PNG)
 
